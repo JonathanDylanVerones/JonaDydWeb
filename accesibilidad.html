@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Accesibilidad - Plusmar">
+  <title>Accesibilidad - Plusmar</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+ 
+  <!-- ===== HEADER ===== -->
+  <header class="header" role="banner">
+    <div class="header__logo">
+      <span class="logo-icon">🚌</span>
+      <span class="logo-text">PLUSMAR</span>
+    </div>
+    <nav class="header__nav" role="navigation" aria-label="Navegación principal">
+      <a href="index.html" class="header__nav-link">Inicio</a>
+      <a href="horarios.html" class="header__nav-link">Horarios</a>
+      <a href="paradas.html" class="header__nav-link">Paradas</a>
+      <a href="accesibilidad.html" class="header__nav-link active">Accesibilidad</a>
+    </nav>
+    <button class="profile-btn" aria-label="Perfil de usuario">👤</button>
+  </header>
+ 
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <main role="main">
+ 
+    <!-- HERO -->
+    <section class="hero-card" aria-label="Accesibilidad en Plusmar">
+      <span class="badge">INCLUSIÓN</span>
+      <h1 class="title">Accesibilidad</h1>
+      <p class="text">
+        En Plusmar creemos que todos merecen viajar con comodidad desde Tres Arroyos. Conoce nuestros servicios de accesibilidad.
+      </p>
+    </section>
+
+    <!-- ACCESIBILIDAD COMPLETA -->
+    <section class="section accessibility-section">
+      <h2 class="section__title">Nuestros Servicios de Accesibilidad</h2>
+      <div class="accessibility-grid">
+        <div class="accessibility-card">
+          <span class="access-icon">♿</span>
+          <h3>Movilidad Reducida</h3>
+          <ul>
+            <li>Rampa de acceso automática en todos los vehículos</li>
+            <li>Espacios reservados y seguros para sillas de ruedas</li>
+            <li>Cinturones de seguridad especiales adaptados</li>
+            <li>Plataforma elevadora para acceso facilitado</li>
+            <li>Asistencia de personal capacitado en cada parada</li>
+          </ul>
+        </div>
+        <div class="accessibility-card">
+          <span class="access-icon">👂</span>
+          <h3>Audición</h3>
+          <ul>
+            <li>Anuncios visuales de paradas en pantallas LED</li>
+            <li>Subtítulos en videos informativos a bordo</li>
+            <li>Sistema de alerta vibratoria para paradas</li>
+            <li>Comunicación escrita con conductores y asistentes</li>
+            <li>Información en lenguaje de señas disponible</li>
+          </ul>
+        </div>
+        <div class="accessibility-card">
+          <span class="access-icon">👁️</span>
+          <h3>Visión</h3>
+          <ul>
+            <li>Guía táctil con relieve en accesos principales</li>
+            <li>Contraste de colores aumentado en señalización</li>
+            <li>Material informativo en Braille</li>
+            <li>Acompañamiento de personal capacitado</li>
+            <li>Facilidades para perros de servicio</li>
+          </ul>
+        </div>
+        <div class="accessibility-card">
+          <span class="access-icon">🧠</span>
+          <h3>Cognitiva</h3>
+          <ul>
+            <li>Información clara y simple en estaciones</li>
+            <li>Pictogramas y símbolos universales</li>
+            <li>Asistencia personalizada durante el viaje</li>
+            <li>Tiempo adicional para abordar y desembarcar</li>
+            <li>Entorno predecible y ordenado</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accessibility-contact">
+        <p>📞 Para solicitar accesibilidad: <strong>0800-PLUSMAR</strong> (con 48 horas de anticipación)</p>
+        <p>📧 Email: <strong>accesibilidad@plusmar.com.ar</strong></p>
+      </div>
+    </section>
+
+    <!-- CÓMO SOLICITAR ASISTENCIA -->
+    <section class="section" aria-labelledby="solicitud-title">
+      <h2 class="section__title" id="solicitud-title">Cómo Solicitar Asistencia</h2>
+      
+      <div style="background: var(--color-white); padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 20px;">
+        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 16px; color: var(--color-main);">📋 Pasos para Solicitar</h3>
+        
+        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+          <div style="display: flex; gap: 16px; align-items: flex-start;">
+            <div style="background: var(--color-main); color: white; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; flex-shrink: 0;">1</div>
+            <div>
+              <h4 style="font-weight: 700; margin-bottom: 6px;">Contáctanos con Anticipación</h4>
+              <p style="font-size: 13px; color: var(--color-sub);">
+                Llama o envía email <strong>48 horas antes</strong> de tu viaje con tus necesidades específicas.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+          <div style="display: flex; gap: 16px; align-items: flex-start;">
+            <div style="background: var(--color-main); color: white; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; flex-shrink: 0;">2</div>
+            <div>
+              <h4 style="font-weight: 700; margin-bottom: 6px;">Confirma tus Datos</h4>
+              <p style="font-size: 13px; color: var(--color-sub);">
+                Proporciona tu número de reserva y tipo de asistencia requerida.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+          <div style="display: flex; gap: 16px; align-items: flex-start;">
+            <div style="background: var(--color-main); color: white; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; flex-shrink: 0;">3</div>
+            <div>
+              <h4 style="font-weight: 700; margin-bottom: 6px;">Llega con Anticipación</h4>
+              <p style="font-size: 13px; color: var(--color-sub);">
+                Presenta 30 minutos antes en la terminal. Nuestro equipo estará esperándote.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 16px; align-items: flex-start;">
+          <div style="background: var(--color-main); color: white; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; flex-shrink: 0;">4</div>
+          <div>
+            <h4 style="font-weight: 700; margin-bottom: 6px;">Disfruta tu Viaje</h4>
+            <p style="font-size: 13px; color: var(--color-sub);">
+              Nuestro personal estará contigo durante todo el viaje para garantizar tu comodidad.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADAPTACIONES DISPONIBLES -->
+    <section class="section" aria-labelledby="adaptaciones-title">
+      <h2 class="section__title" id="adaptaciones-title">Adaptaciones Especiales Disponibles</h2>
+      
+      <div class="grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div class="card" style="border-left: 4px solid var(--color-access);">
+          <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 12px; color: var(--color-access);">🦻 Audio Descriptivo</h3>
+          <p style="font-size: 13px; color: var(--color-sub);">
+            Descripción de puntos de interés en el recorrido para personas ciegas o con baja visión.
+          </p>
+        </div>
+        <div class="card" style="border-left: 4px solid var(--color-access);">
+          <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 12px; color: var(--color-access);">🧑‍🤝‍🧑 Compañero de Viaje</h3>
+          <p style="font-size: 13px; color: var(--color-sub);">
+            Acompañante personal de confianza viaja sin costo en asiento contiguo.
+          </p>
+        </div>
+        <div class="card" style="border-left: 4px solid var(--color-access);">
+          <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 12px; color: var(--color-access);">👨‍🦽 Asiento Priority</h3>
+          <p style="font-size: 13px; color: var(--color-sub);">
+            Reserva de asientos especiales en primera línea con fácil acceso a servicios.
+          </p>
+        </div>
+        <div class="card" style="border-left: 4px solid var(--color-access);">
+          <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 12px; color: var(--color-access);">🚗 Transporte Terrestre</h3>
+          <p style="font-size: 13px; color: var(--color-sub);">
+            Servicio de taxi adaptado desde tu hogar a la terminal. Consultar tarifa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO URGENTE -->
+    <section class="comfort" style="margin: 20px 12px;">
+      <h2 class="section__title" style="margin-bottom: 12px;">⚡ Asistencia de Emergencia</h2>
+      <p style="font-size: 14px; margin-bottom: 12px;">
+        Si necesitas asistencia urgente durante el viaje, contacta al conductor o presiona el botón de llamada.
+      </p>
+      <div style="background: var(--color-access); color: white; padding: 16px; border-radius: 12px; margin-bottom: 16px;">
+        <p style="font-weight: 700; margin-bottom: 6px;">📞 Central de Emergencias Plusmar</p>
+        <p style="font-size: 16px; font-weight: 900;">+54 (291) 431-2000</p>
+        <p style="font-size: 12px; margin-top: 6px;">Disponible 24/7 durante todos los viajes</p>
+      </div>
+    </section>
+
+  </main>
+ 
+  <!-- NAV INFERIOR -->
+  <nav class="bottom-nav" role="navigation" aria-label="Navegación secundaria">
+    <a href="horarios.html" class="nav-item">
+      <span>⌚</span>
+      <span>Horarios</span>
+    </a>
+    <a href="paradas.html" class="nav-item">
+      <span>🚏</span>
+      <span>Paradas</span>
+    </a>
+    <a href="reserva.html" class="nav-item">
+      <span>🎟️</span>
+      <span>Reserva</span>
+    </a>
+    <a href="accesibilidad.html" class="nav-item active" aria-current="page">
+      <span>♿</span>
+      <span>Accesibilidad</span>
+    </a>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__content">
+      <div class="footer__section">
+        <h4>Plusmar</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="horarios.html">Horarios</a></li>
+          <li><a href="paradas.html">Paradas</a></li>
+        </ul>
+      </div>
+      <div class="footer__section">
+        <h4>Información</h4>
+        <ul>
+          <li><a href="reserva.html">Reservas</a></li>
+          <li><a href="accesibilidad.html">Accesibilidad</a></li>
+          <li><a href="seguridad.html">Seguridad</a></li>
+        </ul>
+      </div>
+      <div class="footer__section">
+        <h4>Contacto</h4>
+        <p>📞 0800-PLUSMAR</p>
+        <p>📧 info@plusmar.com.ar</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Plusmar - Viajes Interprovinciales. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+ 
+</body>
+</html>

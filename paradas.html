@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Paradas y ubicaciones - Plusmar">
+  <title>Paradas - Plusmar</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+ 
+  <!-- ===== HEADER ===== -->
+  <header class="header" role="banner">
+    <div class="header__logo">
+      <span class="logo-icon">🚌</span>
+      <span class="logo-text">PLUSMAR</span>
+    </div>
+    <nav class="header__nav" role="navigation" aria-label="Navegación principal">
+      <a href="index.html" class="header__nav-link">Inicio</a>
+      <a href="horarios.html" class="header__nav-link">Horarios</a>
+      <a href="paradas.html" class="header__nav-link active">Paradas</a>
+      <a href="accesibilidad.html" class="header__nav-link">Accesibilidad</a>
+    </nav>
+    <button class="profile-btn" aria-label="Perfil de usuario">👤</button>
+  </header>
+ 
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <main role="main">
+ 
+    <!-- HERO -->
+    <section class="hero-card" aria-label="Paradas Plusmar">
+      <span class="badge">UBICACIONES</span>
+      <h1 class="title">Nuestras Paradas</h1>
+      <p class="text">
+        Todos nuestros viajes salen desde Terminal Tres Arroyos. Conoce las paradas y puntos del recorrido.
+      </p>
+    </section>
+
+    <!-- MAPA INTERACTIVO -->
+    <section class="section" aria-labelledby="mapa-title">
+      <h2 class="section__title" id="mapa-title">Ruta Completa</h2>
+      <div class="map-card">
+        <div class="map">
+          <div class="map-placeholder">🗺️ Mapa Interactivo</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARADAS DETALLADAS -->
+    <section class="section" aria-labelledby="paradas-detail-title">
+      <h2 class="section__title" id="paradas-detail-title">Recorrido - Viaje Directo (Sin Paradas Intermedias)</h2>
+      
+      <div style="background: linear-gradient(135deg, rgba(0, 102, 204, 0.1) 0%, rgba(204, 18, 38, 0.05) 100%); padding: 16px; border-radius: 12px; margin-bottom: 24px;">
+        <p style="font-size: 15px; color: var(--color-text); margin: 0;">
+          <strong>✈️ Viaje Directo:</strong> El servicio es <strong>100% directo sin paradas intermedias</strong>. Subes en Tres Arroyos a las 23:55 hrs y llegas a Terminal Almagro a las 06:45 hrs.
+        </p>
+      </div>
+      
+      <!-- PUNTO DE SALIDA -->
+      <div class="list" style="margin-bottom: 20px;">
+        <div class="item" style="flex-direction: column; align-items: flex-start;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; width: 100%;">
+            <span class="dot red"></span>
+            <h3 style="font-size: 18px; font-weight: 700; color: var(--color-main);">🏢 Terminal Tres Arroyos (SALIDA)</h3>
+          </div>
+          <div style="padding-left: 26px;">
+            <p><strong>📍 Dirección:</strong> Av. Belgrano 1200, Tres Arroyos</p>
+            <p><strong>⏰ Horarios de Atención:</strong> 08:00 - 23:00 hrs (Diariamente)</p>
+            <p><strong>🌙 Hora de Salida Única:</strong> 23:55 hrs (todos los días)</p>
+            <p><strong>☎️ Teléfono:</strong> +54 (291) 431-2000</p>
+            <p><strong>Servicios:</strong> WiFi • Baños • Cafetería • Tienda • Estacionamiento</p>
+            <p style="margin-top: 12px; color: var(--color-sub); font-size: 13px;">
+              Punto de salida. Se recomienda llegar 30 minutos antes del horario. <strong>Presenta tu documento de identidad.</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PUNTO DE LLEGADA -->
+      <div class="list">
+        <div class="item" style="flex-direction: column; align-items: flex-start;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; width: 100%;">
+            <span class="dot red"></span>
+            <h3 style="font-size: 18px; font-weight: 700; color: var(--color-main);">🏁 Terminal Almagro (LLEGADA)</h3>
+          </div>
+          <div style="padding-left: 26px;">
+            <p><strong>📍 Dirección:</strong> Av. Rivadavia 1500, Terminal de Ómnibus, Buenos Aires</p>
+            <p><strong>⏰ Hora de Llegada Estimada:</strong> 06:45 hrs</p>
+            <p><strong>☎️ Teléfono:</strong> +54 (11) 6314-3200</p>
+            <p><strong>Servicios:</strong> WiFi • Baños • Café • Tiendas • Información • Conexiones con otros transportes</p>
+            <p style="margin-top: 12px; color: var(--color-sub); font-size: 13px;">
+              Terminal internacional. Acceso a subte (Línea A), autobuses, taxis y remises. Conexión con toda CABA.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISTANCIAS Y TIEMPOS -->
+    <section class="section" aria-labelledby="distancias-title">
+      <h2 class="section__title" id="distancias-title">Viaje Directo - Información de Recorrido</h2>
+      <div class="grid" style="display: grid; grid-template-columns: 1fr; gap: 16px;">
+        <div class="card" style="border-left: 4px solid var(--color-main);">
+          <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 12px; color: var(--color-main);">
+            Tres Arroyos ➝ Terminal Almagro (DIRECTO)
+          </h3>
+          <p style="font-size: 14px; margin: 8px 0;">📏 <strong>Distancia Total:</strong> 320 km (aproximadamente)</p>
+          <p style="font-size: 14px; margin: 8px 0;">⏱️ <strong>Duración Total:</strong> 7 horas (23:55 hrs a 06:45 hrs)</p>
+          <p style="font-size: 14px; margin: 8px 0;">🚌 <strong>Tipo:</strong> Viaje directo SIN paradas intermedias</p>
+          <p style="font-size: 14px; margin: 8px 0;">🌙 <strong>Servicio:</strong> Nocturno - Viaja de noche, llega en la mañana</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFORMACIÓN IMPORTANTE -->
+    <section class="section" style="background: linear-gradient(135deg, rgba(0, 102, 204, 0.1) 0%, rgba(74, 92, 26, 0.1) 100%); border-radius: 12px;">
+      <h2 class="section__title" id="info-importante-title">ℹ️ Información Importante para Estudiantes</h2>
+      <div style="background: var(--color-white); padding: 16px; border-radius: 12px; border-left: 4px solid var(--color-access);">
+        <ul style="list-style: none; font-size: 14px; line-height: 1.8; margin: 0;">
+          <li>💤 <strong>Viaje nocturno ideal:</strong> Parte a las 23:55 hrs, llegas descansado a primera hora</li>
+          <li>✈️ <strong>Sin paradas:</strong> Viaje directo y cómodo hasta la Terminal Almagro</li>
+          <li>🎓 <strong>Descuento estudiantil:</strong> Presenta tu carnet de estudiante al reservar</li>
+          <li>🚇 <strong>Conexión Terminal:</strong> A metros del subte línea A y otros medios de transporte</li>
+          <li>📱 <strong>Conexión WiFi:</strong> Puedes estudiar durante el viaje</li>
+          <li>🎒 <strong>Consejo:</strong> Lleva abrigo, la temperatura está regulada</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- VIAJES DE REGRESO -->
+    <section class="section" aria-labelledby="regreso-title">
+      <h2 class="section__title" id="regreso-title">🔄 Viajes de Regreso: Almagro → Tres Arroyos</h2>
+      
+      <!-- SALIDA DESDE ALMAGRO -->
+      <div class="list" style="margin-bottom: 20px;">
+        <div class="item" style="flex-direction: column; align-items: flex-start;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; width: 100%;">
+            <span class="dot red"></span>
+            <h3 style="font-size: 18px; font-weight: 700; color: var(--color-main);">🏁 Terminal Almagro (SALIDA)</h3>
+          </div>
+          <div style="padding-left: 26px;">
+            <p><strong>📍 Dirección:</strong> Av. Rivadavia 1500, Terminal de Ómnibus, Buenos Aires</p>
+            <p><strong>⏰ Horarios de Salida:</strong> 21:15 hrs • 22:00 hrs • 23:30 hrs</p>
+            <p><strong>☎️ Teléfono:</strong> +54 (11) 6314-3200</p>
+            <p style="margin-top: 12px; color: var(--color-sub); font-size: 13px;">
+              Salida desde Terminal Internacional. Se recomienda presentarse 30 minutos antes.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- LLEGADA EN TRES ARROYOS -->
+      <div class="list">
+        <div class="item" style="flex-direction: column; align-items: flex-start;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; width: 100%;">
+            <span class="dot red"></span>
+            <h3 style="font-size: 18px; font-weight: 700; color: var(--color-main);">🏢 Terminal Tres Arroyos (LLEGADA)</h3>
+          </div>
+          <div style="padding-left: 26px;">
+            <p><strong>📍 Dirección:</strong> Av. Belgrano 1200, Tres Arroyos</p>
+            <p><strong>⏰ Horas de Llegada:</strong> 04:45 hrs • 05:30 hrs • 06:00 hrs</p>
+            <p><strong>☎️ Teléfono:</strong> +54 (291) 431-2000</p>
+            <p style="margin-top: 12px; color: var(--color-sub); font-size: 13px;">
+              Llegada a Terminal Tres Arroyos. Centro de transporte moderno y accesible.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DURACIÓN DE VIAJES -->
+      <div class="grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 20px;">
+        <div class="card" style="border-left: 4px solid var(--color-main);">
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 12px; color: var(--color-main);">Opción 1</h3>
+          <p style="font-size: 13px; margin: 6px 0;">📍 21:15 hrs</p>
+          <p style="font-size: 13px; margin: 6px 0;">🏁 04:45 hrs</p>
+          <p style="font-size: 13px; margin: 6px 0;">⏱️ 7 hrs 30 min</p>
+        </div>
+        <div class="card" style="border-left: 4px solid #0066cc;">
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 12px; color: #0066cc;">Opción 2</h3>
+          <p style="font-size: 13px; margin: 6px 0;">📍 22:00 hrs</p>
+          <p style="font-size: 13px; margin: 6px 0;">🏁 05:30 hrs</p>
+          <p style="font-size: 13px; margin: 6px 0;">⏱️ 7 hrs 30 min</p>
+        </div>
+        <div class="card" style="border-left: 4px solid var(--color-accent);">
+          <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 12px; color: var(--color-accent);">Opción 3</h3>
+          <p style="font-size: 13px; margin: 6px 0;">📍 23:30 hrs</p>
+          <p style="font-size: 13px; margin: 6px 0;">🏁 06:00 hrs</p>
+          <p style="font-size: 13px; margin: 6px 0;">⏱️ 6 hrs 30 min</p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- CTA -->
+    <section class="comfort" style="margin: 20px 12px;">
+      <p style="font-size: 16px; margin-bottom: 16px; font-weight: 600;">
+        ¿Necesitas más información sobre nuestras paradas?
+      </p>
+      <a href="reserva.html" class="cta-btn">🎟️ RESERVAR AHORA</a>
+    </section>
+
+  </main>
+ 
+  <!-- NAV INFERIOR -->
+  <nav class="bottom-nav" role="navigation" aria-label="Navegación secundaria">
+    <a href="horarios.html" class="nav-item">
+      <span>⌚</span>
+      <span>Horarios</span>
+    </a>
+    <a href="paradas.html" class="nav-item active" aria-current="page">
+      <span>🚏</span>
+      <span>Paradas</span>
+    </a>
+    <a href="reserva.html" class="nav-item">
+      <span>🎟️</span>
+      <span>Reserva</span>
+    </a>
+    <a href="accesibilidad.html" class="nav-item">
+      <span>♿</span>
+      <span>Accesibilidad</span>
+    </a>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__content">
+      <div class="footer__section">
+        <h4>Plusmar</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="horarios.html">Horarios</a></li>
+          <li><a href="paradas.html">Paradas</a></li>
+        </ul>
+      </div>
+      <div class="footer__section">
+        <h4>Información</h4>
+        <ul>
+          <li><a href="reserva.html">Reservas</a></li>
+          <li><a href="accesibilidad.html">Accesibilidad</a></li>
+          <li><a href="seguridad.html">Seguridad</a></li>
+        </ul>
+      </div>
+      <div class="footer__section">
+        <h4>Contacto</h4>
+        <p>📞 0800-PLUSMAR</p>
+        <p>📧 info@plusmar.com.ar</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Plusmar - Viajes Interprovinciales. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+ 
+</body>
+</html>

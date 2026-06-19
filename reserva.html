@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Reserva tu viaje - Plusmar">
+  <title>Reserva - Plusmar</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+ 
+  <!-- ===== HEADER ===== -->
+  <header class="header" role="banner">
+    <div class="header__logo">
+      <span class="logo-icon">🚌</span>
+      <span class="logo-text">PLUSMAR</span>
+    </div>
+    <nav class="header__nav" role="navigation" aria-label="Navegación principal">
+      <a href="index.html" class="header__nav-link">Inicio</a>
+      <a href="horarios.html" class="header__nav-link">Horarios</a>
+      <a href="paradas.html" class="header__nav-link">Paradas</a>
+      <a href="accesibilidad.html" class="header__nav-link">Accesibilidad</a>
+    </nav>
+    <button class="profile-btn" aria-label="Perfil de usuario">👤</button>
+  </header>
+ 
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <main role="main">
+ 
+    <!-- HERO -->
+    <section class="hero-card" aria-label="Reserva de Pasajes">
+      <span class="badge">COMPRA TU PASAJE</span>
+      <h1 class="title">Reserva tu Viaje</h1>
+      <p class="text">
+        Reserva fácil y segura desde Tres Arroyos hacia Terminal Almagro. Obtén descuentos especiales para estudiantes.
+      </p>
+    </section>
+
+    <!-- FORMULARIO DE RESERVA -->
+    <section class="section" aria-labelledby="formulario-title">
+      <h2 class="section__title" id="formulario-title">Información de tu Reserva</h2>
+      
+      <div style="background: linear-gradient(135deg, rgba(204, 18, 38, 0.05) 0%, rgba(74, 92, 26, 0.05) 100%); padding: 16px; border-radius: 12px; border-left: 4px solid var(--color-main); margin-bottom: 20px;">
+        <p style="font-size: 14px; color: var(--color-text); margin: 0;"><strong>📍 Rutas Disponibles:</strong> Viajes desde <strong>Tres Arroyos a Terminal Almagro</strong> o de <strong>Terminal Almagro a Tres Arroyos</strong>. Todos los viajes son directos y nocturnos.</p>
+      </div>
+      
+      <form style="background: var(--color-white); padding: 24px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        
+        <!-- DATOS PERSONALES -->
+        <fieldset style="border: none; margin-bottom: 24px;">
+          <legend style="font-size: 16px; font-weight: 700; color: var(--color-main); margin-bottom: 16px;">
+            👤 Datos Personales
+          </legend>
+          
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">Nombre Completo *</label>
+            <input type="text" placeholder="Tu nombre y apellido" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;" required>
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">Email *</label>
+            <input type="email" placeholder="tu@email.com" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;" required>
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">Teléfono *</label>
+            <input type="tel" placeholder="+54 (291) XXX-XXXX" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;" required>
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">DNI *</label>
+            <input type="text" placeholder="XX.XXX.XXX" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;" required>
+          </div>
+        </fieldset>
+
+        <!-- DETALLES DEL VIAJE -->
+        <fieldset style="border: none; margin-bottom: 24px;">
+          <legend style="font-size: 16px; font-weight: 700; color: var(--color-main); margin-bottom: 16px;">
+            🎟️ Detalles del Viaje
+          </legend>
+
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">Tipo de Viaje *</label>
+            <select id="tipoViaje" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;" required onchange="actualizarHorarios()">
+              <option value="">-- Selecciona tipo de viaje --</option>
+              <option value="ida">Ida: Tres Arroyos → Terminal Almagro</option>
+              <option value="regreso">Regreso: Terminal Almagro → Tres Arroyos</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">Fecha de Salida *</label>
+            <input type="date" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;" required>
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">Horario de Salida *</label>
+            <select id="horarioSalida" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;" required>
+              <option value="">-- Selecciona un horario --</option>
+              <option value="23:55" data-tipo="ida">23:55 hrs (🌙 VIAJE NOCTURNO - Llega 06:45 hrs)</option>
+              <option value="21:15" data-tipo="regreso">21:15 hrs (🌙 VIAJE NOCTURNO - Llega 04:45 hrs)</option>
+              <option value="22:00" data-tipo="regreso">22:00 hrs (🌙 VIAJE NOCTURNO - Llega 05:30 hrs)</option>
+              <option value="23:30" data-tipo="regreso">23:30 hrs (🌙 VIAJE NOCTURNO - Llega 06:00 hrs)</option>
+            </select>
+            <p style="font-size: 12px; color: var(--color-sub); margin-top: 8px;">Viaje directo sin paradas intermedias.</p>
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">Cantidad de Pasajes *</label>
+            <input type="number" min="1" max="6" value="1" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;" required>
+          </div>
+        </fieldset>
+
+        <!-- BENEFICIOS ESTUDIANTIL -->
+        <fieldset style="border: none; margin-bottom: 24px;">
+          <legend style="font-size: 16px; font-weight: 700; color: var(--color-main); margin-bottom: 16px;">
+            🎓 Información Estudiantil
+          </legend>
+
+          <div style="margin-bottom: 16px;">
+            <label style="display: flex; align-items: center; gap: 12px; cursor: pointer;">
+              <input type="checkbox" style="width: 18px; height: 18px; cursor: pointer;">
+              <span style="font-size: 14px;">Soy estudiante universitario (25% descuento)</span>
+            </label>
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">Institución Educativa</label>
+            <input type="text" placeholder="Universidad..." style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;">
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">Carrera</label>
+            <input type="text" placeholder="Tu carrera..." style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;">
+          </div>
+        </fieldset>
+
+        <!-- REQUERIMIENTOS ESPECIALES -->
+        <fieldset style="border: none; margin-bottom: 24px;">
+          <legend style="font-size: 16px; font-weight: 700; color: var(--color-main); margin-bottom: 16px;">
+            ♿ Requerimientos Especiales
+          </legend>
+
+          <div style="margin-bottom: 16px;">
+            <label style="display: flex; align-items: center; gap: 12px; cursor: pointer;">
+              <input type="checkbox" style="width: 18px; height: 18px; cursor: pointer;">
+              <span style="font-size: 14px;">Necesito acceso para silla de ruedas</span>
+            </label>
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <label style="display: flex; align-items: center; gap: 12px; cursor: pointer;">
+              <input type="checkbox" style="width: 18px; height: 18px; cursor: pointer;">
+              <span style="font-size: 14px;">Requiero asistencia especial</span>
+            </label>
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px;">Notas Adicionales</label>
+            <textarea placeholder="Cuéntanos si necesitas algo especial..." style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; min-height: 80px; resize: vertical;" maxlength="500"></textarea>
+          </div>
+        </fieldset>
+
+        <!-- TÉRMINOS -->
+        <div style="margin-bottom: 24px;">
+          <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
+            <input type="checkbox" style="width: 18px; height: 18px; cursor: pointer; margin-top: 2px;" required>
+            <span style="font-size: 13px;">
+              Acepto los <a href="#" style="color: var(--color-main); text-decoration: none; font-weight: 600;">términos y condiciones</a> y la <a href="#" style="color: var(--color-main); text-decoration: none; font-weight: 600;">política de privacidad</a>
+            </span>
+          </label>
+        </div>
+
+        <!-- BOTÓN ENVIAR -->
+        <button type="submit" class="cta-btn" style="margin: 0;">
+          💳 CONFIRMAR RESERVA
+        </button>
+      </form>
+    </section>
+
+    <!-- INFORMACIÓN DE PAGO -->
+    <section class="section" aria-labelledby="pago-title">
+      <h2 class="section__title" id="pago-title">Métodos de Pago</h2>
+      <div class="grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div class="card" style="border-top: 4px solid var(--color-main);">
+          <span style="font-size: 32px; display: block; margin-bottom: 12px;">💳</span>
+          <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Tarjeta de Crédito/Débito</h3>
+          <p style="font-size: 13px; color: var(--color-sub);">Visa, Mastercard y American Express. Pago seguro con encriptación.</p>
+        </div>
+        <div class="card" style="border-top: 4px solid var(--color-accent);">
+          <span style="font-size: 32px; display: block; margin-bottom: 12px;">📱</span>
+          <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Billetera Digital</h3>
+          <p style="font-size: 13px; color: var(--color-sub);">Mercado Pago, Uala y otras billeteras disponibles.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+ 
+  <!-- NAV INFERIOR -->
+  <nav class="bottom-nav" role="navigation" aria-label="Navegación secundaria">
+    <a href="horarios.html" class="nav-item">
+      <span>⌚</span>
+      <span>Horarios</span>
+    </a>
+    <a href="paradas.html" class="nav-item">
+      <span>🚏</span>
+      <span>Paradas</span>
+    </a>
+    <a href="reserva.html" class="nav-item active" aria-current="page">
+      <span>🎟️</span>
+      <span>Reserva</span>
+    </a>
+    <a href="accesibilidad.html" class="nav-item">
+      <span>♿</span>
+      <span>Accesibilidad</span>
+    </a>
+  </nav>
+
+  <script>
+    function actualizarHorarios() {
+      var tipo = document.getElementById('tipoViaje').value;
+      var select = document.getElementById('horarioSalida');
+      var opciones = select.querySelectorAll('option[data-tipo]');
+
+      select.value = '';
+
+      opciones.forEach(function(op) {
+        if (!tipo || op.getAttribute('data-tipo') === tipo) {
+          op.hidden = false;
+          op.disabled = false;
+        } else {
+          op.hidden = true;
+          op.disabled = true;
+        }
+      });
+    }
+  </script>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__content">
+      <div class="footer__section">
+        <h4>Plusmar</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="horarios.html">Horarios</a></li>
+          <li><a href="paradas.html">Paradas</a></li>
+        </ul>
+      </div>
+      <div class="footer__section">
+        <h4>Información</h4>
+        <ul>
+          <li><a href="reserva.html">Reservas</a></li>
+          <li><a href="accesibilidad.html">Accesibilidad</a></li>
+          <li><a href="seguridad.html">Seguridad</a></li>
+        </ul>
+      </div>
+      <div class="footer__section">
+        <h4>Contacto</h4>
+        <p>📞 0800-PLUSMAR</p>
+        <p>📧 info@plusmar.com.ar</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Plusmar - Viajes Interprovinciales. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+ 
+</body>
+</html>

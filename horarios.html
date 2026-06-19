@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Horarios de salida - Plusmar">
+  <title>Horarios - Plusmar</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+ 
+  <!-- ===== HEADER ===== -->
+  <header class="header" role="banner">
+    <div class="header__logo">
+      <span class="logo-icon">🚌</span>
+      <span class="logo-text">PLUSMAR</span>
+    </div>
+    <nav class="header__nav" role="navigation" aria-label="Navegación principal">
+      <a href="index.html" class="header__nav-link">Inicio</a>
+      <a href="horarios.html" class="header__nav-link active">Horarios</a>
+      <a href="paradas.html" class="header__nav-link">Paradas</a>
+      <a href="accesibilidad.html" class="header__nav-link">Accesibilidad</a>
+    </nav>
+    <button class="profile-btn" aria-label="Perfil de usuario">👤</button>
+  </header>
+ 
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <main role="main">
+ 
+    <!-- HERO -->
+    <section class="hero-card" aria-label="Horarios Plusmar">
+      <span class="badge">🌙 VIAJE NOCTURNO</span>
+      <h1 class="title">Nuestro Único Horario</h1>
+      <p class="text">
+        Salida única diaria desde Tres Arroyos: <strong>23:55 hrs</strong> ➝ Llegada a Buenos Aires: <strong>06:45 hrs</strong>. Viaje directo sin paradas intermedias. Ideal para estudiantes.
+      </p>
+    </section>
+
+    <!-- HORARIOS SEMANALES -->
+    <section class="section" aria-labelledby="horarios-title">
+      <h2 class="section__title" id="horarios-title">Horario Disponible</h2>
+      
+      <!-- ÚNICO HORARIO -->
+      <div style="margin-bottom: 24px;">
+        <h3 style="font-size: 18px; margin: 16px 0 12px; color: var(--color-main); font-weight: 700;">
+          🌙 Servicio Diario (Todos los días)
+        </h3>
+        <div class="table">
+          <div class="header">
+            <span>Ruta</span>
+            <span>Salida</span>
+            <span>Llegada</span>
+            <span>Disponibilidad</span>
+          </div>
+          <div class="row">
+            <div><p>Tres Arroyos → Terminal Almagro (DIRECTO)</p></div>
+            <span>23:55 hrs</span>
+            <span>06:45 hrs</span>
+            <span style="color: #2e7d32; font-weight: 700;">✓ Disponible</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BENEFICIOS ESTUDIANTES -->
+      <div style="background: linear-gradient(135deg, rgba(74, 92, 26, 0.1) 0%, rgba(0, 102, 204, 0.1) 100%); padding: 16px; border-radius: 12px; border-left: 4px solid var(--color-accent); margin: 20px 0;">
+        <h3 style="font-size: 16px; font-weight: 700; color: var(--color-accent); margin-bottom: 12px;">🎓 ¿Por qué es ideal para estudiantes?</h3>
+        <ul style="list-style: none; font-size: 14px; line-height: 1.8; margin: 0;">
+          <li>✓ Horario nocturno: Viaja de noche, llega en la mañana a clases</li>
+          <li>✓ Viaje directo: Sin paradas intermedias, máximo confort</li>
+          <li>✓ Descuentos estudiantiles: 20% en tu pasaje</li>
+          <li>✓ Conexión desde la Terminal: A todos los transportes de CABA</li>
+          <li>✓ WiFi disponible: Para estudiar durante el viaje</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- VIAJES DE REGRESO -->
+    <section class="section" aria-labelledby="regreso-title">
+      <h2 class="section__title" id="regreso-title">🔄 Viajes de Regreso: Almagro → Tres Arroyos</h2>
+      <p style="text-align: center; color: var(--color-sub); margin-bottom: 20px; font-size: 14px;">
+        Tres opciones de horarios nocturnos desde Terminal Almagro de regreso a Tres Arroyos.
+      </p>
+      
+      <div style="margin-bottom: 24px;">
+        <h3 style="font-size: 18px; margin: 16px 0 12px; color: var(--color-main); font-weight: 700;">
+          🌙 Opciones de Regreso (Todos los días)
+        </h3>
+        <div class="table">
+          <div class="header">
+            <span>Ruta</span>
+            <span>Salida</span>
+            <span>Llegada</span>
+            <span>Disponibilidad</span>
+          </div>
+          <div class="row">
+            <div><p>Terminal Almagro → Tres Arroyos (DIRECTO)</p></div>
+            <span>21:15 hrs</span>
+            <span>04:45 hrs</span>
+            <span style="color: #2e7d32; font-weight: 700;">✓ Disponible</span>
+          </div>
+          <div class="row">
+            <div><p>Terminal Almagro → Tres Arroyos (DIRECTO)</p></div>
+            <span>22:00 hrs</span>
+            <span>05:30 hrs</span>
+            <span style="color: #2e7d32; font-weight: 700;">✓ Disponible</span>
+          </div>
+          <div class="row">
+            <div><p>Terminal Almagro → Tres Arroyos (DIRECTO)</p></div>
+            <span>23:30 hrs</span>
+            <span>06:00 hrs</span>
+            <span style="color: #2e7d32; font-weight: 700;">✓ Disponible</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- INFORMACIÓN REGRESO -->
+      <div style="background: linear-gradient(135deg, rgba(0, 102, 204, 0.1) 0%, rgba(74, 92, 26, 0.1) 100%); padding: 16px; border-radius: 12px; border-left: 4px solid #0066cc; margin: 20px 0;">
+        <h3 style="font-size: 16px; font-weight: 700; color: #0066cc; margin-bottom: 12px;">📌 Información sobre Viajes de Regreso</h3>
+        <ul style="list-style: none; font-size: 14px; line-height: 1.8; margin: 0;">
+          <li>✓ Viajes directos sin paradas intermedias</li>
+          <li>✓ Horarios variados para adaptarse a tu disponibilidad</li>
+          <li>✓ Todos son viajes nocturnos para máxima comodidad</li>
+          <li>✓ Llega a Tres Arroyos listo para tus actividades</li>
+          <li>✓ Mismos beneficios estudiantiles y servicios</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- NOTAS IMPORTANTES -->
+    <section class="section" style="background: linear-gradient(135deg, rgba(204, 18, 38, 0.05) 0%, rgba(74, 92, 26, 0.05) 100%); margin: 20px 12px; border-radius: 12px;">
+      <h2 class="section__title" style="color: var(--color-main);">📝 Información Importante</h2>
+      <div style="background: var(--color-white); padding: 16px; border-radius: 12px; border-left: 4px solid var(--color-main);">
+        <ul style="list-style: none; font-size: 14px; line-height: 1.8;">
+          <li>✓ <strong>Salida única diaria desde Terminal Tres Arroyos a las 23:55 hrs</strong></li>
+          <li>✓ Viaje directo sin paradas intermedias (7 horas aproximadamente)</li>
+          <li>✓ Llegada estimada a Terminal Almagro: 06:45 hrs</li>
+          <li>✓ Se recomienda presentarse 30 minutos antes de la salida</li>
+          <li>✓ Lleva abrigo: Temperatura controlada en el ómnibus</li>
+          <li>✓ Solicita cambios o cancelaciones hasta 48 horas antes del viaje</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="comfort" style="margin: 20px 12px;">
+      <p style="font-size: 16px; margin-bottom: 16px; font-weight: 600;">
+        ¿Listo para viajar? Selecciona tu horario y reserva ahora.
+      </p>
+      <a href="reserva.html" class="cta-btn">🎟️ RESERVAR AHORA</a>
+    </section>
+
+  </main>
+ 
+  <!-- NAV INFERIOR -->
+  <nav class="bottom-nav" role="navigation" aria-label="Navegación secundaria">
+    <a href="horarios.html" class="nav-item active" aria-current="page">
+      <span>⌚</span>
+      <span>Horarios</span>
+    </a>
+    <a href="paradas.html" class="nav-item">
+      <span>🚏</span>
+      <span>Paradas</span>
+    </a>
+    <a href="reserva.html" class="nav-item">
+      <span>🎟️</span>
+      <span>Reserva</span>
+    </a>
+    <a href="accesibilidad.html" class="nav-item">
+      <span>♿</span>
+      <span>Accesibilidad</span>
+    </a>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__content">
+      <div class="footer__section">
+        <h4>Plusmar</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="horarios.html">Horarios</a></li>
+          <li><a href="paradas.html">Paradas</a></li>
+        </ul>
+      </div>
+      <div class="footer__section">
+        <h4>Información</h4>
+        <ul>
+          <li><a href="reserva.html">Reservas</a></li>
+          <li><a href="accesibilidad.html">Accesibilidad</a></li>
+          <li><a href="seguridad.html">Seguridad</a></li>
+        </ul>
+      </div>
+      <div class="footer__section">
+        <h4>Contacto</h4>
+        <p>📞 0800-PLUSMAR</p>
+        <p>📧 info@plusmar.com.ar</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Plusmar - Viajes Interprovinciales. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+ 
+</body>
+</html>

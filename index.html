@@ -4,44 +4,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Plusmar - Viajes Interprovinciales seguros y económicos para estudiantes">
   <title>Plusmar – Viajes Interprovinciales</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
  
-  <!-- ===== HEADER ===== -->
-  <header class="header">
-    <div>
+  <!-- ===== HEADER MEJORADO ===== -->
+  <header class="header" role="banner">
+    <div class="header__logo">
       <span class="logo-icon">🚌</span>
-      <span class="logo-text">
-        <span> P L U S M A R</span>
-      </span>
+      <span class="logo-text">PLUSMAR</span>
     </div>
-    <button class="profile-btn" aria-label="Perfil de usuario">
-       👤 
-    </button>
+    <nav class="header__nav" role="navigation" aria-label="Navegación principal">
+      <a href="index.html" class="header__nav-link active">Inicio</a>
+      <a href="horarios.html" class="header__nav-link">Horarios</a>
+      <a href="paradas.html" class="header__nav-link">Paradas</a>
+      <a href="accesibilidad.html" class="header__nav-link">Accesibilidad</a>
+    </nav>
+    <button class="profile-btn" aria-label="Perfil de usuario">👤</button>
   </header>
  
   <!-- ===== CONTENIDO PRINCIPAL ===== -->
-  <main>
+  <main role="main">
  
     <!-- HERO -->
-    <section class="hero-card">
+    <section class="hero-card" aria-label="Presentación de Plusmar">
       <span class="badge">INTER-PROVINCIAL</span>
       <h1 class="title">Plusmar</h1>
       <p class="text">
-        Viajes Interprovinciales seguros y económicos diseñados para estudiantes universitarios.
+        Viajes Interprovinciales seguros y económicos desde Tres Arroyos hacia Terminal Almagro. Diseñado para estudiantes universitarios.
       </p>
       <div class="routes">
-        <button class="btn">Mapa Región A</button>
-        <button class="btn">Región B</button>
-        <button class="btn wide">Terminal Almagro</button>
+        <a href="horarios.html" class="btn">📅 Horarios</a>
+        <a href="paradas.html" class="btn">🗺️ Ruta</a>
+        <a href="reserva.html" class="btn wide">🎟️ Reservar Ahora</a>
+      </div>
+    </section>
+
+    <!-- IDENTIDAD VISUAL DE LA LÍNEA -->
+    <section class="section" aria-labelledby="linea-title">
+      <h2 class="section__title" id="linea-title">Línea Plusmar - Tu Conexión Confiable</h2>
+      <div class="brand-card">
+        <div class="brand-color">
+          <div class="color-display" style="background: #CC1226;"></div>
+          <p><strong>Color Identificador:</strong> Rojo Corporativo #CC1226</p>
+        </div>
+        <div class="brand-info">
+          <p><strong>Salidas desde:</strong> Terminal Tres Arroyos</p>
+          <p><strong>Horario:</strong> 23:55 hrs (Único viaje diario)</p>
+          <p><strong>Recorrido:</strong> Tres Arroyos → Terminal Almagro (DIRECTO)</p>
+          <p><strong>Distancia:</strong> 320 km aproximadamente</p>
+          <p><strong>Duración:</strong> 7 horas (Viaje nocturno)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMÁGENES CARACTERÍSTICAS DEL TRANSPORTE -->
+    <section class="section" aria-labelledby="transporte-title">
+      <h2 class="section__title" id="transporte-title">Características del Transporte</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <div class="image-placeholder">🚌</div>
+          <h3>Buses Premium</h3>
+          <p>Flota moderna y bien mantenida con tecnología de última generación</p>
+        </div>
+        <div class="gallery-item">
+          <div class="image-placeholder">💺</div>
+          <h3>Asientos Reclinables</h3>
+          <p>Reclinación de 160° para mayor comodidad en viajes largos</p>
+        </div>
+        <div class="gallery-item">
+          <div class="image-placeholder">❄️</div>
+          <h3>Aire Acondicionado</h3>
+          <p>Climatización automática independiente por sectores</p>
+        </div>
+        <div class="gallery-item">
+          <div class="image-placeholder">📡</div>
+          <h3>Wi-Fi High-Speed</h3>
+          <p>Conexión a internet de alta velocidad durante todo el viaje</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUNTOS DEL RECORRIDO CON IMÁGENES -->
+    <section class="section" aria-labelledby="recorrido-title">
+      <h2 class="section__title" id="recorrido-title">Viaje Directo - Sin Paradas Intermedias</h2>
+      <div class="journey-card">
+        <div class="journey-stop">
+          <div class="stop-number">1</div>
+          <div class="image-placeholder-large">🌙</div>
+          <h3>Tres Arroyos</h3>
+          <p><strong>Salida:</strong> 23:55 hrs</p>
+          <p>Terminal moderna lista para tu viaje nocturno</p>
+        </div>
+        <div class="journey-arrow">⟶<br/>8 hrs<br/>directo</div>
+        <div class="journey-stop">
+          <div class="stop-number">2</div>
+          <div class="image-placeholder-large">🌅</div>
+          <h3>Terminal Almagro</h3>
+          <p><strong>Llegada:</strong> 06:45 hrs</p>
+          <p>Llegas en la mañana listo para tus clases</p>
+        </div>
       </div>
     </section>
  
     <!-- BENEFICIOS -->
-    <section class="section">
-      <h2 class="section__title">Beneficios Universitarios</h2>
+    <section class="section" aria-labelledby="beneficios-title">
+      <h2 class="section__title" id="beneficios-title">Beneficios Universitarios</h2>
       <div class="grid">
         <div class="card">
           <span class="icon">%</span>
@@ -63,82 +133,116 @@
     </section>
  
     <!-- MAPA -->
-    <section class="section">
-      <h2 class="section__title">Ruta Interprovincial</h2>
+    <section class="section" aria-labelledby="mapa-title">
+      <h2 class="section__title" id="mapa-title">Ruta Interprovincial - Viaje Nocturno</h2>
       <div class="map-card">
         <div class="map">
-          <img src="image.png" alt="Mapa de ruta Plusmar">
-          </div>
+          <div class="map-placeholder">🗺️ Mapa de Ruta (320 km directo)</div>
         </div>
         <div class="info">
           <span>⌚</span>
           <div>
-            <p>Próxima Salida: <strong>14:00</strong></p>
-            <p>Llegada estimada: 21:30</p>
+            <p>Salida Diaria: <strong>23:55</strong></p>
+            <p>Llegada estimada: <strong>06:45</strong></p>
           </div>
         </div>
       </div>
     </section>
  
     <!-- FRECUENCIAS -->
-    <section class="section">
-      <h2 class="section__title">Frecuencias Semanales</h2>
+    <section class="section" aria-labelledby="frecuencias-title">
+      <h2 class="section__title" id="frecuencias-title">Horario de Servicio</h2>
       <div class="table">
         <div class="header">
-          <span>Días de Servicio</span>
-          <span>Salidas Diarias</span>
+          <span>Disponibilidad</span>
+          <span>Horario</span>
         </div>
         <div class="row">
           <div>
-            <p>Lunes a Jueves</p>
-            <p class="sub">Ruta Regional</p>
+            <p>Todos los Días</p>
+            <p class="sub">365 días al año</p>
           </div>
-          <span class="count">2 salidas</span>
-        </div>
-        <div class="row">
-          <div>
-            <p>Viernes y Domingo</p>
-            <p class="sub">Refuerzo Estudiantil</p>
-          </div>
-          <span class="count">5 salidas</span>
+          <span class="count" style="font-size: 16px; font-weight: 700;">23:55 hrs</span>
         </div>
       </div>
+      <p style="text-align: center; font-size: 13px; color: var(--color-sub); margin-top: 16px;">
+        🌙 Único viaje diario. Viaje directo sin paradas intermedias. Ideal para estudiantes.
+      </p>
     </section>
  
     <!-- PARADAS -->
-    <section class="section">
-      <h2 class="section__title">Paradas Estratégicas</h2>
+    <section class="section" aria-labelledby="paradas-title">
+      <h2 class="section__title" id="paradas-title">Puntos de Viaje - Servicio Directo</h2>
       <div class="list">
         <div class="item">
-          <span class="dot red"></span>
+          <span class="dot red" aria-label="Punto de partida"></span>
           <div>
             <p class="name red">Tres Arroyos</p>
-            <p class="sub">Punto de Partida</p>
+            <p class="sub">Salida 23:55 hrs</p>
           </div>
           <span>📍</span>
         </div>
         <div class="item">
-          <span class="dot green"></span>
-          <div>
-            <p class="name">Azul</p>
-            <p class="sub">Conexión Intermedia</p>
-          </div>
-          <span>🚏</span>
-        </div>
-        <div class="item">
-          <span class="dot red"></span>
+          <span class="dot red" aria-label="Punto de destino"></span>
           <div>
             <p class="name red">Terminal Almagro</p>
-            <p class="sub">Destino Final</p>
+            <p class="sub">Llegada 06:45 hrs (Viaje directo 7 hrs)</p>
           </div>
-          <span>🚏</span>
+          <span>🏁</span>
         </div>
+      </div>
+    </section>
+
+    <!-- ACCESIBILIDAD DEL SERVICIO -->
+    <section class="section accessibility-section" aria-labelledby="accesibilidad-title">
+      <h2 class="section__title" id="accesibilidad-title">Accesibilidad del Servicio</h2>
+      <div class="accessibility-grid">
+        <div class="accessibility-card">
+          <span class="access-icon">♿</span>
+          <h3>Acceso para Personas con Movilidad Reducida</h3>
+          <ul>
+            <li>Rampa de acceso automática</li>
+            <li>Espacio reservado para sillas de ruedas</li>
+            <li>Cinturones de seguridad especiales</li>
+          </ul>
+        </div>
+        <div class="accessibility-card">
+          <span class="access-icon">👂</span>
+          <h3>Soporte Auditivo</h3>
+          <ul>
+            <li>Anuncios visuales de paradas</li>
+            <li>Subtítulos en pantallas informativas</li>
+            <li>Sistema de alerta vibratoria</li>
+          </ul>
+        </div>
+        <div class="accessibility-card">
+          <span class="access-icon">👁️</span>
+          <h3>Asistencia Visual</h3>
+          <ul>
+            <li>Guía táctil en acceso principal</li>
+            <li>Contraste de colores aumentado</li>
+            <li>Acompañamiento de personal capacitado</li>
+          </ul>
+        </div>
+        <div class="accessibility-card">
+          <span class="access-icon">👨‍🦽</span>
+          <h3>Asistencia Personalizada</h3>
+          <ul>
+            <li>Asistentes a bordo capacitados</li>
+            <li>Solicitud de asistencia previa</li>
+            <li>Atención prioritaria</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accessibility-contact">
+        <p>📞 Para solicitar accesibilidad: <strong>0800-PLUSMAR</strong></p>
+        <p>📧 Email: <strong>accesibilidad@plusmar.com.ar</strong></p>
       </div>
     </section>
  
     <!-- CONFORT -->
-    <section class="comfort">
-      <h2 class="section__title">Confort en Largas Distancias</h2>
+    <section class="comfort" aria-labelledby="confort-title">
+      <h2 class="section__title" id="confort-title">Confort en Largas Distancias</h2>
       <div class="list">
         <div class="item">
           <span>💺</span>
@@ -152,39 +256,70 @@
           <span>🙋</span>
           <div>
             <p>Asistente a bordo</p>
-            <a href="#" class="link">SOLICITAR ASISTENCIA</a>
+            <a href="accesibilidad.html" class="link">SOLICITAR ASISTENCIA</a>
           </div>
         </div>
         <div class="item">
           <span>🔋</span>
-          <p>Cargadores USB</p>
+          <p>Cargadores USB en cada asiento</p>
         </div>
       </div>
-      <a href="#" class="cta-btn">RESERVAR AHORA</a>
+      <a href="reserva.html" class="cta-btn">RESERVAR AHORA</a>
     </section>
  
   </main>
  
-  <!-- NAV -->
-  <nav class="bottom-nav">
-    <a href="#" class="nav-item">
+  <!-- NAV INFERIOR MEJORADA -->
+  <nav class="bottom-nav" role="navigation" aria-label="Navegación secundaria">
+    <a href="horarios.html" class="nav-item" aria-label="Ver horarios">
       <span>⌚</span>
       <span>Horarios</span>
     </a>
-    <a href="#" class="nav-item">
+    <a href="paradas.html" class="nav-item" aria-label="Ver paradas">
       <span>🚏</span>
       <span>Paradas</span>
     </a>
-    <a href="#" class="nav-item active">
+    <a href="reserva.html" class="nav-item active" aria-label="Realizar reserva" aria-current="page">
       <span>🎟️</span>
       <span>Reserva</span>
     </a>
-    <a href="#" class="nav-item">
-      <span>🛡️</span>
-      <span>Seguridad</span>
+    <a href="accesibilidad.html" class="nav-item" aria-label="Información de accesibilidad">
+      <span>♿</span>
+      <span>Accesibilidad</span>
     </a>
   </nav>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__content">
+      <div class="footer__section">
+        <h4>Plusmar</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="horarios.html">Horarios</a></li>
+          <li><a href="paradas.html">Paradas</a></li>
+        </ul>
+      </div>
+      <div class="footer__section">
+        <h4>Información</h4>
+        <ul>
+          <li><a href="reserva.html">Reservas</a></li>
+          <li><a href="accesibilidad.html">Accesibilidad</a></li>
+          <li><a href="seguridad.html">Seguridad</a></li>
+        </ul>
+      </div>
+      <div class="footer__section">
+        <h4>Contacto</h4>
+        <p>📞 0800-PLUSMAR</p>
+        <p>📧 info@plusmar.com.ar</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Plusmar - Viajes Interprovinciales. Todos los derechos reservados.</p>
+    </div>
+  </footer>
  
 </body>
 </html>
+
  
