@@ -6,6 +6,49 @@
   <meta name="description" content="Paradas y ubicaciones - Plusmar">
   <title>Paradas - Plusmar</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    #map-interactive {
+      height: 420px;
+      width: 100%;
+      border-radius: var(--radius);
+      z-index: 1;
+    }
+    .map-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 14px 16px;
+      border-top: 1px solid #eee;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .map-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .legend-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid white;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+      flex-shrink: 0;
+    }
+    .legend-line {
+      width: 28px;
+      height: 4px;
+      border-radius: 2px;
+      background: repeating-linear-gradient(
+        to right,
+        #CC1226 0px,
+        #CC1226 8px,
+        transparent 8px,
+        transparent 14px
+      );
+    }
+  </style>
 </head>
 <body>
  
@@ -40,8 +83,20 @@
     <section class="section" aria-labelledby="mapa-title">
       <h2 class="section__title" id="mapa-title">Ruta Completa</h2>
       <div class="map-card">
-        <div class="map">
-          <div class="map-placeholder">🗺️ Mapa Interactivo</div>
+        <div id="map-interactive"></div>
+        <div class="map-legend">
+          <div class="map-legend-item">
+            <div class="legend-dot" style="background:#CC1226;"></div>
+            <span>Terminal Tres Arroyos (Salida 23:55 hs)</span>
+          </div>
+          <div class="map-legend-item">
+            <div class="legend-line"></div>
+            <span>Ruta directa ~320 km</span>
+          </div>
+          <div class="map-legend-item">
+            <div class="legend-dot" style="background:#2e7d32;"></div>
+            <span>Terminal Almagro, Bs.As. (Llegada 06:45 hs)</span>
+          </div>
         </div>
       </div>
     </section>
@@ -221,6 +276,94 @@
       <span>Accesibilidad</span>
     </a>
   </nav>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    window.addEventListener('load', function () {
+      var container = document.getElementById('map-interactive');
+      if (!container || typeof L === 'undefined') return;
+
+      var map = L.map('map-interactive', {
+        center: [-36.8, -59.5],
+        zoom: 7,
+        scrollWheelZoom: false,
+        attributionControl: false
+      });
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18
+      }).addTo(map);
+
+      setTimeout(function () { map.invalidateSize(); }, 200);
+
+      var redIcon = L.divIcon({
+        html: '<div style="background:#CC1226;width:18px;height:18px;border-radius:50%;border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.5);"></div>',
+        iconSize: [18, 18],
+        iconAnchor: [9, 9],
+        className: ''
+      });
+
+      var greenIcon = L.divIcon({
+        html: '<div style="background:#2e7d32;width:18px;height:18px;border-radius:50%;border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.5);"></div>',
+        iconSize: [18, 18],
+        iconAnchor: [9, 9],
+        className: ''
+      });
+
+      L.marker([-38.3768, -60.2782], { icon: redIcon })
+        .addTo(map)
+        .bindPopup(
+          '<div style="font-family:-apple-system,sans-serif;min-width:200px;">' +
+          '<h3 style="color:#CC1226;font-size:15px;margin:0 0 8px;font-weight:800;">Terminal Tres Arroyos</h3>' +
+          '<p style="font-size:13px;margin:4px 0;"><strong>Salida:</strong> 23:55 hs todos los dias</p>' +
+          '<p style="font-size:13px;margin:4px 0;"><strong>Direccion:</strong> Av. Belgrano 1200</p>' +
+          '<p style="font-size:13px;margin:4px 0;"><strong>Tel:</strong> +54 (291) 431-2000</p>' +
+          '</div>',
+          { maxWidth: 260 }
+        );
+
+      L.marker([-34.6261, -58.4296], { icon: greenIcon })
+        .addTo(map)
+        .bindPopup(
+          '<div style="font-family:-apple-system,sans-serif;min-width:200px;">' +
+          '<h3 style="color:#2e7d32;font-size:15px;margin:0 0 8px;font-weight:800;">Terminal Almagro, Buenos Aires</h3>' +
+          '<p style="font-size:13px;margin:4px 0;"><strong>Llegada:</strong> 06:45 hs</p>' +
+          '<p style="font-size:13px;margin:4px 0;"><strong>Direccion:</strong> Av. Rivadavia 1500</p>' +
+          '<p style="font-size:13px;margin:4px 0;"><strong>Tel:</strong> +54 (11) 6314-3200</p>' +
+          '</div>',
+          { maxWidth: 260 }
+        );
+
+      var routeStyle = { color: '#CC1226', weight: 5, opacity: 0.9 };
+
+      var fallback = [
+        [-38.3768, -60.2782],
+        [-38.0220, -60.0890],
+        [-37.6700, -59.8080],
+        [-36.7756, -59.8557],
+        [-36.0150, -59.0975],
+        [-35.0522, -58.7566],
+        [-34.7500, -58.5500],
+        [-34.6261, -58.4296]
+      ];
+      var routeLine = L.polyline(fallback, routeStyle).addTo(map);
+
+      fetch('https://router.project-osrm.org/route/v1/driving/-60.2782,-38.3768;-58.4296,-34.6261?overview=full&geometries=geojson')
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data.routes && data.routes[0] && data.routes[0].geometry) {
+            var coords = data.routes[0].geometry.coordinates.map(function (c) {
+              return [c[1], c[0]];
+            });
+            routeLine.setLatLngs(coords);
+          }
+        })
+        .catch(function () {});
+
+      container.addEventListener('mouseenter', function () { map.scrollWheelZoom.enable(); });
+      container.addEventListener('mouseleave', function () { map.scrollWheelZoom.disable(); });
+    });
+  </script>
 
   <!-- FOOTER -->
   <footer class="footer" role="contentinfo">
