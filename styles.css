@@ -67,6 +67,7 @@ main {
   display: none;
   gap: 20px;
   flex: 1;
+  justify-content: space-evenly;
 }
 
 .header__nav-link {
@@ -83,20 +84,6 @@ main {
 .header__nav-link.active {
   color: var(--color-main);
   border-bottom-color: var(--color-main);
-}
-
-.profile-btn {
-  background: none;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-  padding: 8px;
-  border-radius: 50%;
-  transition: background 0.2s;
-}
-
-.profile-btn:hover {
-  background: var(--color-bg);
 }
 
 /* ===== HERO ===== */
